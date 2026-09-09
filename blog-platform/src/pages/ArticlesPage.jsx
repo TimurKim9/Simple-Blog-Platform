@@ -1,3 +1,4 @@
+import Header from '../components/Header';
 import { useEffect, useState } from 'react';
 import { getArticles } from '../api/articles';
 import ArticlePreview from '../components/ArticlePreview';
@@ -32,16 +33,37 @@ function ArticlesPage() {
   }
 
   return (
-    <div>
-      <h1>Articles</h1>
+    <>
+      <Header />
 
-        {articles.map((article) => (
-          <ArticlePreview
-            key={article.slug}
-            article={article}
-          />
-        ))}
-    </div>
+      <section className="hero">
+        <h1>Realworld Blog</h1>
+        <p>A place to share your knowledge.</p>
+      </section>
+
+      <main className="articles-page">
+        <div className="articles-container">
+          <h2>Popular tags</h2>
+
+          <div className="popular-tags">
+            <span>one</span>
+            <span>something</span>
+            <span>chinese</span>
+            <span>english</span>
+            <span>french</span>
+          </div>
+
+          <div className="articles-list">
+            {articles.map((article) => (
+              <ArticlePreview
+                key={article.slug}
+                article={article}
+              />
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
 
