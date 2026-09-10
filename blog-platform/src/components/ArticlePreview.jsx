@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 function ArticlePreview({ article }) {
   return (
     <article className="article-card">
+      
       <div className="article-header">
         <div className="article-meta">
           <img
@@ -28,31 +29,27 @@ function ArticlePreview({ article }) {
             src="/icons/like.svg"
             alt="like like like"
           />
-
           {article.favoritesCount}
         </button>
       </div>
 
-      <h2>{article.title}</h2>
+      <Link
+        className="article-content"
+        to={`/articles/${article.slug}`}
+      >
+        <h2>{article.title}</h2>
 
-      <p className="article-description">
-        {article.description}
-      </p>
+        <p className="article-description">
+          {article.description}
+        </p>
 
-      <div className="article-bottom">
         <div className="article-tags">
           {article.tagList?.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </div>
+      </Link>
 
-        <Link
-          className="read-more"
-          to={`/articles/${article.slug}`}
-        >
-          Read more...
-        </Link>
-      </div>
     </article>
   );
 }

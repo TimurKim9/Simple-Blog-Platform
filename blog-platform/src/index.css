@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
 :root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "Titillium Web", sans-serif;
   line-height: 1.6;
   font-weight: 400;
 
@@ -48,7 +48,7 @@ textarea {
 }
 
 .articles-container > h2 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   padding: 12px;
   border: 1px solid #ddd;
@@ -96,7 +96,7 @@ textarea {
 }
 
 .author-name {
-  color: #5cb85c;
+  color: #61BB61;
   font-size: 13px;
   line-height: 1.2;
 }
@@ -127,22 +127,11 @@ textarea {
 }
 
 .article-tags span {
-  padding: 2px 9px;
+  padding: 3px 9px;
   border: 1px solid #ddd;
   border-radius: 10px;
   color: #999;
   font-size: 10px;
-}
-
-.read-more {
-  flex-shrink: 0;
-  color: #999;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.read-more:hover {
-  color: #5cb85c;
 }
 
 .articles-list {
@@ -188,20 +177,15 @@ textarea {
   align-items: center;
   gap: 5px;
 
-  padding: 5px 10px;
-  border: 1px solid #5cb85c;
+  padding: 8px 16px;
+  border: 1px solid #61BB61;
   border-radius: 5px;
 
   background: white;
-  color: #5cb85c;
+  color: #61BB61;
 
-  font-size: 12px;
+  font-size: 12.8px;
   cursor: pointer;
-}
-
-.favorite-button:hover {
-  background: #5cb85c;
-  color: white;
 }
 
 .favorite-icon {
@@ -228,7 +212,7 @@ textarea {
 }
 
 .logo {
-  color: #5cb85c;
+  color: #61BB61;
   font-size: 20px;
   font-weight: 700;
   text-decoration: none;
@@ -250,7 +234,7 @@ textarea {
 }
 
 .hero {
-  background: #5cb85c;
+  background:#61BB61;
   color: white;
   text-align: center;
   padding: 45px 20px;
@@ -263,6 +247,16 @@ textarea {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: 2px;
+  background: white;
+  margin: 0 auto;
 }
 
 .hero p {
@@ -279,10 +273,22 @@ textarea {
 }
 
 .popular-tags span {
-  padding: 3px 10px;
+  padding: 6px 16px;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #999;
-  font-size: 12px;
+  font-size: 12.8px;
   background: white;
+  margin: 4px;
 }
+
+.article-content {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-content:hover h2 {
+  color: #61BB61;
+}
+
