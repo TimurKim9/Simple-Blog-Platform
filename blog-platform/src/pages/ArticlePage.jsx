@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import { format } from 'date-fns';
+import Header from '../components/Header';
 import { getArticle } from '../api/articles';
 
 function ArticlePage() {
@@ -35,15 +37,73 @@ function ArticlePage() {
   }
 
   return (
-    <div>
-      <h1>{article.title}</h1>
+    <>
+      <Header />
 
-      <p>{article.description}</p>
+      <main className="article-page">
+        <section className="single-article-header">
+          <div className="single-article-header-content">
+            <h1>{article.title}</h1>
 
-      <p>Author: {article.author.username}</p>
+            <div className="article-author">
+              <img
+                className="author-icon"
+                src="/icons/user.svg"
+                alt="user"
+              />
 
-      <ReactMarkdown>{article.body}</ReactMarkdown>
-    </div>
+              <div>
+                <strong>{article.author.username}</strong>
+                <small>
+                  {format(new Date(article.createdAt), 'dd/MM/yyyy')}
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="article-content">
+          <p className="article-description">
+            {article.description}
+          </p>
+
+          <ReactMarkdown>
+            {article.body}
+          </ReactMarkdown>
+
+          <div className="article-tags">
+            {article.tagList.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+
+          <div className="article-actions">
+            <div className="article-author-bottom">
+              <img
+                className="author-icon"
+                src="/icons/user.svg"
+                alt="user"
+              />
+
+              <div>
+                <strong>{article.author.username}</strong>
+                <small>
+                  {format(new Date(article.createdAt), 'dd/MM/yyyy')}
+                </small>
+              </div>
+            </div>
+
+            <button className="edit-button">
+              Edit
+            </button>
+
+            <button className="delete-button">
+              Delete
+            </button>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 

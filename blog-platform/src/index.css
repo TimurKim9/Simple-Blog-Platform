@@ -5,7 +5,7 @@
   font-weight: 400;
 
   color: #1f2937;
-  background: #f5f5f5;
+  background: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,7 +19,7 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: #f5f5f5;
+  background: #FFFFFF;
 }
 
 a {
@@ -70,7 +70,7 @@ textarea {
 
 .article-card {
   padding: 18px 20px;
-  background: #fff;
+  background: #FFFFFF;
   border: 1px solid #ddd;
   border-radius: 6px;
   text-align: left;
@@ -181,7 +181,7 @@ textarea {
   border: 1px solid #61BB61;
   border-radius: 5px;
 
-  background: white;
+  background: #FFFFFF;
   color: #61BB61;
 
   font-size: 12.8px;
@@ -196,7 +196,7 @@ textarea {
 
 .header {
   height: 56px;
-  background: #ffffff;
+  background: #FFFFFF;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -235,7 +235,7 @@ textarea {
 
 .hero {
   background:#61BB61;
-  color: white;
+  color: #FFFFFF;
   text-align: center;
   padding: 45px 20px;
   margin-bottom: 30px;
@@ -243,7 +243,7 @@ textarea {
 
 .hero h1 {
   margin: 0;
-  color: white;
+  color: #FFFFFF;
   font-size: 48px;
   font-weight: 700;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -255,7 +255,7 @@ textarea {
   width: 100%;
   max-width: 340px;
   height: 2px;
-  background: white;
+  background: #FFFFFF;
   margin: 0 auto;
 }
 
@@ -278,7 +278,7 @@ textarea {
   border-radius: 10px;
   color: #999;
   font-size: 12.8px;
-  background: white;
+  background: #FFFFFF;
   margin: 4px;
 }
 
@@ -292,3 +292,144 @@ textarea {
   color: #61BB61;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.pagination button {
+  width: 30px;
+  height: 33px;
+  padding: 0;
+  background: #FFFFFF;
+  border: 1px solid #61BB61;
+  color: #61BB61;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #61BB61;
+  color: #FFFFFF;
+}
+
+.pagination button:hover {
+  background: #61BB61;
+  color: #FFFFFF;
+}
+
+.article-page {
+  width: 100%;
+}
+
+.single-article-header {
+  background: #333;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.single-article-header-content {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.single-article-header h1 {
+  color: #FFFFFF;
+  font-size: 28px;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  max-width: 600px;
+}
+
+.article-author {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #61BB61;
+}
+
+.author-icon {
+  color: #61BB61;
+  font-size: 18px;
+}
+
+.article-author strong,
+.article-author-bottom strong {
+  display: block;
+  color: #61BB61;
+  font-size: 12px;
+}
+
+.article-author small,
+.article-author-bottom small {
+  display: block;
+  color: #aaa;
+  font-size: 9px;
+}
+
+.article-content {
+  width: 700px;
+  margin: 25px auto;
+  color: #333333;
+  font-size: 12px;
+}
+
+.article-description {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.article-content p {
+  line-height: 1.6;
+}
+
+.article-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.article-tags span {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 2px 10px;
+  color: #aaa;
+  font-size: 9px;
+}
+
+.article-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 25px;
+}
+
+.article-author-bottom {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.edit-button,
+.delete-button {
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.edit-button {
+  border: 1px solid #61BB61;
+  color: #61BB61;
+}
+
+.delete-button {
+  border: 1px solid #BB6161;
+  color: #BB6161;
+}
