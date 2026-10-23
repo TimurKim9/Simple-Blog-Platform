@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns';
 import Header from '../components/Header';
 import { getArticle } from '../api/articles';
+import Tag from '../components/Tag';
 
 function ArticlePage() {
   const { slug } = useParams();
@@ -76,7 +77,7 @@ function ArticlePage() {
 
             <div className="article-tags">
               {article.tagList.map((tag) => (
-                <span key={tag}>{tag}</span>
+                <Tag key={tag} name={tag} />
               ))}
             </div>
 

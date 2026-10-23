@@ -1,5 +1,5 @@
 function Tag({ name }) {
-  return <span>{name}</span>;
+  return <span className="tag">{name}</span>;
 }
 
 export default Tag;

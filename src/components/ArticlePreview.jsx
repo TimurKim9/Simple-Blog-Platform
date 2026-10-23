@@ -1,15 +1,16 @@
+
 import { Link } from 'react-router-dom';
+import Tag from './Tag';
 
 function ArticlePreview({ article }) {
   return (
     <article className="article-card">
-      
       <div className="article-header">
         <div className="article-meta">
           <img
             className="author-icon"
             src="/icons/user.svg"
-            alt="faceless guy"
+            alt="user"
           />
 
           <div>
@@ -27,7 +28,7 @@ function ArticlePreview({ article }) {
           <img
             className="favorite-icon"
             src="/icons/like.svg"
-            alt="like like like"
+            alt="like"
           />
           {article.favoritesCount}
         </button>
@@ -45,11 +46,10 @@ function ArticlePreview({ article }) {
 
         <div className="article-tags">
           {article.tagList?.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <Tag key={tag} name={tag} />
           ))}
         </div>
       </Link>
-
     </article>
   );
 }
