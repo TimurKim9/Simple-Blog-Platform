@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns';
+
 import Header from '../components/Header';
-import { getArticle } from '../api/articles';
+import Loading from '../components/Loading';
 import Tag from '../components/Tag';
+import { getArticle } from '../api/articles';
 
 function ArticlePage() {
   const { slug } = useParams();
@@ -37,9 +39,9 @@ function ArticlePage() {
       <Header />
 
       {loading ? (
-        <h2>Loading...</h2>
+        <Loading />
       ) : error ? (
-        <h2>Error: {error}</h2>
+        <p>Error: {error}</p>
       ) : article ? (
         <main className="article-page">
           <section className="single-article-header">

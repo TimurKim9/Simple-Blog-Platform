@@ -24,32 +24,34 @@ function ArticlePreview({ article }) {
           </div>
         </div>
 
-        <button className="favorite-button">
+        <button className="favorite-button" type="button">
           <img
             className="favorite-icon"
             src="/icons/like.svg"
-            alt="like"
+            alt=""
           />
           {article.favoritesCount}
         </button>
       </div>
 
-      <Link
-        className="article-content"
-        to={`/articles/${article.slug}`}
-      >
-        <h2>{article.title}</h2>
+      <h2>
+        <Link
+          className="article-title-link"
+          to={`/articles/${article.slug}`}
+        >
+          {article.title}
+        </Link>
+      </h2>
 
-        <p className="article-description">
-          {article.description}
-        </p>
+      <p className="article-description">
+        {article.description}
+      </p>
 
-        <div className="article-tags">
-          {article.tagList?.map((tag) => (
-            <Tag key={tag} name={tag} />
-          ))}
-        </div>
-      </Link>
+      <div className="article-tags">
+        {article.tagList?.map((tag) => (
+          <Tag key={tag} name={tag} />
+        ))}
+      </div>
     </article>
   );
 }

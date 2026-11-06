@@ -1,15 +1,18 @@
+
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           Realworld Blog
-        </a>
+        </Link>
 
         <nav className="nav">
-          <a href="/">Home</a>
-          <a href="#">Sign in</a>
-          <a href="#">Sign up</a>
+          <Link to="/">Home</Link>
+          <Link to="/sign-in">Sign in</Link>
+          <Link to="/sign-up">Sign up</Link>
         </nav>
       </div>
     </header>

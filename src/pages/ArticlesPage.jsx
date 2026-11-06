@@ -4,6 +4,7 @@ import ArticlePreview from '../components/ArticlePreview';
 import Tag from '../components/Tag';
 import Banner from '../components/Banner';
 import Pagination from '../components/Pagination';
+import Loading from '../components/Loading';
 
 import { useEffect, useState } from 'react';
 import { getArticles } from '../api/articles';
@@ -44,45 +45,42 @@ function ArticlesPage() {
   return (
     <>
       <Header />
+      <Banner />
 
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : error ? (
-        <h2>Error: {error}</h2>
-      ) : (
-        <>
-          <Banner />
+      <main className="articles-page">
+        <div className="articles-container">
+          <h2>Popular tags</h2>
 
-          <main className="articles-page">
-            <div className="articles-container">
-              <h2>Popular tags</h2>
+          <div className="popular-tags">
+            <Tag name="one" />
+            <Tag name="something" />
+            <Tag name="chinese" />
+            <Tag name="english" />
+            <Tag name="french" />
+          </div>
 
-              <div className="popular-tags">
-                <Tag name="one" />
-                <Tag name="something" />
-                <Tag name="chinese" />
-                <Tag name="english" />
-                <Tag name="french" />
-              </div>
+          <div className="articles-list">
+            {loading ? (
+              <Loading />
+            ) : error ? (
+              <p>Error: {error}</p>
+            ) : (
+              articles.map((article) => (
+                <ArticlePreview
+                  key={article.slug}
+                  article={article}
+                />
+              ))
+            )}
+          </div>
 
-              <div className="articles-list">
-                {articles.map((article) => (
-                  <ArticlePreview
-                    key={article.slug}
-                    article={article}
-                  />
-                ))}
-              </div>
-
-              <Pagination
-                page={page}
-                totalPages={totalPages}
-                onPageChange={setPage}
-              />
-            </div>
-          </main>
-        </>
-      )}
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            onPageChange={setPage}
+          />
+        </div>
+      </main>
     </>
   );
 }
